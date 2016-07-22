@@ -6,6 +6,7 @@ import { store, selectVideo } from './VideoStore.jsx';
 class VideoPlaylistItem extends Component {
     constructor() {
         super();
+        // http://www.ian-thomas.net/autobinding-react-and-es6-classes/
         this.onClick = this.onClick.bind(this);
     }
     onClick() {
@@ -20,6 +21,7 @@ class VideoPlaylistItem extends Component {
         );
     }
 }
+// https://facebook.github.io/react/docs/reusable-components.html
 VideoPlaylistItem.propTypes = {
     url: React.PropTypes.string.isRequired,
 };

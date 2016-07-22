@@ -9,6 +9,7 @@ class AddVideoForm extends Component {
         this.state = {
             url: '',
         };
+        // http://www.ian-thomas.net/autobinding-react-and-es6-classes/
         this.onFormSubmit = this.onFormSubmit.bind(this);
         this.onURLChanged = this.onURLChanged.bind(this);
     }
