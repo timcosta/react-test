@@ -2,22 +2,22 @@ import React, { Component } from 'react';
 import vjs from 'video.js';
 import vjsyt from 'videojs-youtube';
 
-import {store} from './VideoStore.jsx';
+import { store } from './VideoStore.jsx';
 
 
 class VideoPlayer extends Component {
 
     componentWillMount() {
-        store.subscribe( () => {
-            var state = store.getState();
-            var url = state.getIn(['videoPlayer', 'selected']);
-            if(url) {
+        store.subscribe(() => {
+            const state = store.getState();
+            const url = state.getIn(['videoPlayer', 'selected']);
+            if (url) {
                 this.player.src({
-                    type: ( url.indexOf('youtube') > -1 ? 'video/youtube' : 'video/mp4' ),
-                    src: url
-                })
+                    type: (url.indexOf('youtube') > -1 ? 'video/youtube' : 'video/mp4'),
+                    src: url,
+                });
             }
-        })
+        });
     }
 
     componentDidMount() {
@@ -34,7 +34,7 @@ class VideoPlayer extends Component {
                 height="264"
                 data-setup='{ "techOrder":["youtube", "html5"] }'
             ></video>
-        )
+        );
     }
 }
 

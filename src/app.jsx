@@ -1,19 +1,14 @@
-import React, {Component} from 'react';
-
+import React from 'react';
 import VideoPlayer from './Components/VideoPlayer.jsx';
 import VideoPlaylist from './Components/VideoPlayList.jsx';
 import AddVideoForm from './Components/AddVideoForm.jsx';
 
-class App extends React.Component {
-   render() {
-      return (
-         <div>
+export default function App() {
+    return (
+        <div>
             <VideoPlayer />
             <VideoPlaylist />
             <AddVideoForm />
-         </div>
-      );
-   }
+        </div>
+    );
 }
-
-export default App;
