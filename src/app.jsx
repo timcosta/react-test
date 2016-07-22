@@ -136,10 +136,8 @@ class VideoPlayer extends React.Component {
         return (
             <video
                 id="my-player"
-                className="video-js vjs-default-skin"
+                className="video-js vjs-default-skin vjs-fluid"
                 controls
-                width="640"
-                height="264"
                 data-setup='{ "techOrder":["youtube", "html5"] }'
             ></video>
         )

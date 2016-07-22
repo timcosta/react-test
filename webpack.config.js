@@ -28,6 +28,9 @@ var config = {
                presets: ['es2015', 'react']
             }
          }
+      ],
+      noParse: [
+          /node_modules[\/]video\.js[\/]/
       ]
    }
 }
