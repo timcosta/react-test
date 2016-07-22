@@ -30,6 +30,8 @@
   "dependencies": {
     "immutable": "^3.8.1",
     "redux": "^3.5.2",
+    "video.js": "^5.10.7",
+    "videojs-youtube": "^2.1.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }

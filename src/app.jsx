@@ -1,6 +1,8 @@
 import React from 'react';
 import { createStore } from 'redux';
 import { List, Map } from 'immutable';
+import vjs from 'video.js';
+import vjsyt from 'videojs-youtube';
 
 
 var defaultState = Map({
@@ -111,11 +113,44 @@ class VideoPlaylist extends React.Component {
     }
 }
 
+class VideoPlayer extends React.Component {
+
+    componentWillMount() {
+        store.subscribe( () => {
+            var state = store.getState();
+            var url = state.getIn(['videoPlayer', 'selected']);
+            if(url) {
+                this.player.src({
+                    type: ( url.indexOf('youtube') > -1 ? 'video/youtube' : 'video/mp4' ),
+                    src: url
+                })
+            }
+        })
+    }
+
+    componentDidMount() {
+        this.player = vjs('my-player');
+    }
+
+    render() {
+        return (
+            <video
+                id="my-player"
+                className="video-js vjs-default-skin"
+                controls
+                width="640"
+                height="264"
+                data-setup='{ "techOrder":["youtube", "html5"] }'
+            ></video>
+        )
+    }
+}
 
 class App extends React.Component {
    render() {
       return (
          <div>
+            <VideoPlayer />
             <VideoPlaylist />
             <AddVideoForm />
          </div>
