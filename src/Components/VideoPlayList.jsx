@@ -26,7 +26,8 @@ class VideoPlaylist extends Component {
         this.state.playlist.forEach((item, index) => {
             items.push(<VideoPlaylistItem
                 key={index}
-                url={item}
+                url={item.url}
+                type={item.type}
             />);
         });
 

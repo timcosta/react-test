@@ -10,7 +10,7 @@ class VideoPlaylistItem extends Component {
         this.onClick = this.onClick.bind(this);
     }
     onClick() {
-        store.dispatch(selectVideo(this.props.url));
+        store.dispatch(selectVideo(this.props));
     }
 
     render() {
@@ -24,6 +24,7 @@ class VideoPlaylistItem extends Component {
 // https://facebook.github.io/react/docs/reusable-components.html
 VideoPlaylistItem.propTypes = {
     url: React.PropTypes.string.isRequired,
+    type: React.PropTypes.string.isRequired,
 };
 
 export default VideoPlaylistItem;

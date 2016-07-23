@@ -10,11 +10,12 @@ class VideoPlayer extends Component {
     componentWillMount() {
         store.subscribe(() => {
             const state = store.getState();
-            const url = state.getIn(['videoPlayer', 'selected']);
-            if (url) {
+            const video = state.getIn(['videoPlayer', 'selected']);
+            if (video) {
+                console.log(video);
                 this.player.src({
-                    type: (url.indexOf('youtube') > -1 ? 'video/youtube' : 'video/mp4'),
-                    src: url,
+                    type: `video/${video.type}`,
+                    src: video.url,
                 });
             }
         });

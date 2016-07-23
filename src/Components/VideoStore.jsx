@@ -9,26 +9,26 @@ const defaultState = new Map({
     }),
 });
 
-function addVideo(url) {
+function addVideo(state) {
     return {
         type: 'ADD_VIDEO',
-        url,
+        video: state,
     };
 }
 
-function selectVideo(url) {
+function selectVideo(video) {
     return {
         type: 'SELECT_VIDEO',
-        url,
+        video,
     };
 }
 
 function videoPlaylistReducers(state, action) {
     switch (action.type) {
     case 'ADD_VIDEO':
-        return state.updateIn(['videoPlayer', 'playlist'], list => list.push(action.url));
+        return state.updateIn(['videoPlayer', 'playlist'], list => list.push(action.video));
     case 'SELECT_VIDEO':
-        return state.setIn(['videoPlayer', 'selected'], action.url);
+        return state.setIn(['videoPlayer', 'selected'], action.video);
     default:
         return state;
     }
