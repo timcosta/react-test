@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import vjs from 'video.js';
-import vjsyt from 'videojs-youtube';
+import 'videojs-youtube';
 
 import { store } from './VideoStore.jsx';
 
