@@ -1,7 +1,7 @@
 import React from 'react';
-import VideoPlayer from './Components/VideoPlayer.jsx';
-import VideoPlaylist from './Components/VideoPlayList.jsx';
-import AddVideoForm from './Components/AddVideoForm.jsx';
+import VideoPlayer from 'components/VideoPlayer';
+import VideoPlaylist from 'components/VideoPlaylist';
+import AddVideoForm from 'components/AddVideoForm';
 
 export default function App() {
     return (

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import vjs from 'video.js';
 import 'videojs-youtube';
 
-import { store } from './VideoStore.jsx';
+import { store } from 'stores/VideoStore';
 
 
 class VideoPlayer extends Component {

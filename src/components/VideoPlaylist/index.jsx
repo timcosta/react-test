@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import { store } from './VideoStore.jsx';
-import VideoPlaylistItem from './VideoPlaylistItem.jsx';
+import { store } from 'stores/VideoStore';
+import VideoPlaylistItem from 'components/VideoPlaylistItem';
 
 class VideoPlaylist extends Component {
     constructor() {

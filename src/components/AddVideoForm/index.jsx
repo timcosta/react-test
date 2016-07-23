@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { store, addVideo } from './VideoStore.jsx';
+import { store, addVideo } from 'stores/VideoStore';
 
 
 /**

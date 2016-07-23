@@ -1,10 +1,10 @@
 const webpack = require('webpack');
-var config = {
+const config = {
     devtool: 'cheap-module-source-map',
     entry: './src/entry.js',
 
     output: {
-        path:'./dist',
+        path: './dist',
         filename: 'bundle.js',
     },
 
@@ -14,9 +14,9 @@ var config = {
         historyApiFallback: true,
         proxy: {
             '/api*': {
-                target: 'http://localhost:8000'
-            }
-        }
+                target: 'http://localhost:8000',
+            },
+        },
     },
 
     module: {
@@ -27,22 +27,27 @@ var config = {
                 loader: 'babel',
 
                 query: {
-                presets: ['es2015', 'react']
-                }
-            }
+                    presets: ['es2015', 'react'],
+                },
+            },
         ],
         noParse: [
-            /node_modules[\/]video\.js[\/]/
-        ]
+            /node_modules[\/]video\.js[\/]/,
+        ],
+    },
+
+    resolve: {
+        modulesDirectories: ['src', 'node_modules'],
+        extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx'],
     },
 
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
-                'NODE_ENV': JSON.stringify('production')
-            }
-        })
-    ]
-}
+                NODE_ENV: JSON.stringify('production'),
+            },
+        }),
+    ],
+};
 
 module.exports = config;
