@@ -6,5 +6,12 @@
     "indent": ["error", 4],
     "react/jsx-indent-props": [2, 4],
     "react/jsx-indent": [2, 4]
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
   }
 }
