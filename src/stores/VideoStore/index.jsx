@@ -26,7 +26,7 @@ function selectVideo(video) {
 function videoPlaylistReducers(state, action) {
     switch (action.type) {
     case 'ADD_VIDEO':
-        return state.updateIn(['videoPlayer', 'playlist'], list => list.push(action.video));
+        return state.updateIn(['videoPlayer', 'playlist'], playlist => playlist.push(action.video));
     case 'SELECT_VIDEO':
         return state.setIn(['videoPlayer', 'selected'], action.video);
     default:
